@@ -1,7 +1,5 @@
 package client;
 
-import java.io.File;
-
 import facade.FileFacade;
 //import java.util.Scanner;
 
