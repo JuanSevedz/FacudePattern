@@ -1,13 +1,18 @@
 package client;
 
-import facade.Facade;
+import java.io.File;
+
+import facade.FileFacade;
 //import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) {
-        Facade facade = new Facade();
+        
+        // Usando el Singleton para instanciar FileFacade
+        FileFacade facade = FileFacade.getInstance();
+
         String filePath = "test.txt";
-        String originalContent = ("ribircse y ratpircnE oreiuq euq otxet le se etsE"); //Modificamos si queremos hacer los input o no
+        String originalContent = ("¡Hola, patrón Facade en Javal!"); //Modificamos si queremos hacer los input o no
 
         /* 
         Scanner scanner = new Scanner(System.in);
@@ -20,7 +25,11 @@ public class Client {
         facade.encryptAndWriteFile(filePath, originalContent);
         System.out.println("Se ha escrito el contenido original en " + filePath);
 
-        // Leeemos el archivo y lo encriptamos
+        // Leemos el archivo y lo desencriptamos
+        String decryptedContent = facade.readFileAndDecrypt(filePath);
+        System.out.println("\nContenido desencriptado de " + filePath + ": " + decryptedContent);
+        
+        // También podemos leer y encriptar para ver el contenido encriptado
         String encryptedContent = facade.readFileAndEncrypt(filePath);
         System.out.println("\nContenido encriptado de " + filePath + ": " + encryptedContent);
     }

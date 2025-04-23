@@ -6,4 +6,8 @@ public class FileEncryptor {
         return new StringBuilder(data).reverse().toString();
     }
 
+    public String decrypt(String encryptedData) {
+        // Simulación de desencriptación simple (reversa la cadena)
+        return new StringBuilder(encryptedData).reverse().toString();
+    }
 }
